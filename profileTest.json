@@ -1,0 +1,6 @@
+{
+    "ndiSourceName": "MELCHIOR (Program)",
+    "encoderPreset": "1080p30veryfast",
+    // "rtmpStream": "rtmp://live.twitch.tv/app/live_18125169_6ObWCbn3pQNzzekfEuAGD3iSsJhang"
+    "rtmpStream": "rtmp://ingest-wdc.mixer.com:1935/beam/176122-7tru7y1favhcxrxmiv2nruwapcjlf9ye"
+}

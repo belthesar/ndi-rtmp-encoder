@@ -1,0 +1,66 @@
+{
+    "720p30veryfast": {
+        "framerate": 30,
+        "resolution": "1280x720",
+        "videoBitrate": 3,
+        "audioBitrate": "128k",
+        "x264Preset": "veryfast",
+        "description": "720p video @ 30 FPS, 3 Mbit per second. Good for reliable quality at lower bitrate, decent on i5 processors."
+    },
+    "720p30fast": {
+        "framerate": 30,
+        "resolution": "1280x720",
+        "videoBitrate": 3,
+        "audioBitrate": "128k",
+        "x264Preset": "fast",
+        "description": "720p video @ 30 FPS, 3 Mbit per second.  Higher quality than your average game stream, recommend i7 processor."
+    },
+    "720p60veryfast": {
+        "framerate": 60,
+        "resolution": "1280x720",
+        "videoBitrate": 4,
+        "audioBitrate": "128k",
+        "x264Preset": "veryfast",
+        "description": "720p video @ 60 FPS, 4 Mbit per second.  Good for high framerate (classic console, FPS, etc) content, recommend i7 processor"
+    },
+    "720p60fast": {
+        "framerate": 60,
+        "resolution": "1280x720",
+        "videoBitrate": 4,
+        "audioBitrate": "128k",
+        "x264Preset": "fast",
+        "description": "720p video @ 60 FPS, 4 Mbit per second.  Great for high framerate (classic console, FPS, etc) content, recommend dedicated i7 Processor"
+    },
+    "1080p30veryfast": {
+        "framerate": 30,
+        "resolution": "1920x1080",
+        "videoBitrate": 4,
+        "audioBitrate": "160k",
+        "x264Preset": "veryfast",
+        "description": "1080p Video @ 30 FPS, 4 Mbit per second. Good for high detail content, okay on i5 processors, recommend i7."
+    },
+    "1080p30fast": {
+        "framerate": 30,
+        "resolution": "1920x1080",
+        "videoBitrate": 4,
+        "audioBitrate": "160k",
+        "x264Preset": "fast",
+        "description": "1080p Video @ 30 FPS, 4 Mbit per second.  Great for high detail content, recommend dedicated i7 processor."
+    },
+    "1080p60veryfast": {
+        "framerate": 60,
+        "resolution": "1920x1080",
+        "videoBitrate": 5,
+        "audioBitrate": "160k",
+        "x264Preset": "veryfast",
+        "description": "1080p Video @ 60 FPS, 5 Mbit per second.  For high detail, high framreate (classic console, FPS, etc) content. Recommend dedicated i7 processor."
+    },
+    "1080p60fast": {
+        "framerate": 60,
+        "resolution": "1920x1080",
+        "videoBitrate": 5,
+        "audioBitrate": "160k",
+        "x264Preset": "fast",
+        "description": "1080p Video @ 60 FPS, 5 Mbit per second.  Excellent quality for high framerate content, recommend dedicated i7 processor."
+    }
+}
