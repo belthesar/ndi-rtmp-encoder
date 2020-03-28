@@ -51,6 +51,7 @@ def show_presets(dummyArg=None):
     for preset, presetSettings in encoderPresets.items():
         print(preset)
         print("  " + presetSettings['description'])
+        print(" ")
     sys.exit(0)
 
 def encoder_help(dummyArg=None):
