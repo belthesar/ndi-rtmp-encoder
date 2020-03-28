@@ -8,7 +8,7 @@ import codecs
 def ffmpeg_check_sources(dummyArg=None):
     subprocess.check_call(['ffmpeg', '-f', 'libndi_newtek', '-find_sources', '1', '-i', 'dummy'])
 
-def ffmpeg_encode(framerate=30, resolution="1280x720", intVideoBitrate=3, audioBitrate="128k", x264Preset = "veryfast", ndiSource="", rtmpStream=""):
+def ffmpeg_encode(framerate=30, resolution="1280x720", intVideoBitrate=3, audioBitrate="128k", x264Preset = "veryfast", ndiSource=None, rtmpStream=None):
     if not ndiSource or not rtmpStream:
         print("NDI Source or RTMP URI not specified. Exiting.")
         sys.exit(1)
