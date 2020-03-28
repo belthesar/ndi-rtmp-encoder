@@ -48,7 +48,7 @@ def show_presets(dummyArg=None):
     with open(encoderSettings['encoderPresetsPath']) as fileEncoderPresets:
         encoderPresets = json.load(fileEncoderPresets)
     print("Available Presets to use:")
-    for preset, presetSettings in encoderPresets.iteritems():
+    for preset, presetSettings in encoderPresets.items():
         print(preset)
         print("  " + presetSettings['description'])
     sys.exit(0)
@@ -78,7 +78,7 @@ appArguments = {
 def showArguments(args=appArguments):
     # Returns instructions for how to use the encoder, then exits.
     # print("Either no arguments were specified, or there was a syntax error. Showing help.")
-    for arg, argdict in args.iteritems():
+    for arg, argdict in args.items():
         print(arg + ": " + argdict['instructions'])
     sys.exit(0)  
 
