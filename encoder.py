@@ -80,10 +80,12 @@ def showArguments(args=appArguments):
     # print("Either no arguments were specified, or there was a syntax error. Showing help.")
     for arg, argdict in args.items():
         print(arg + ": " + argdict['instructions'])
+        print(" ")
     sys.exit(0)  
 
 if __name__ == "__main__":
     print("NDI to RTMP Encoder")
+    print("-------------------")
     with open("encoderSettings.json") as fileEncoderSettings:
         encoderSettings = json.load(fileEncoderSettings)
 
