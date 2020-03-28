@@ -1,10 +1,9 @@
 # NDI Encoder Appliance
 
 ## Pre-requisites
-* Python 2.7
+* Python 
 * ffmpeg compiled with NDI support
-    * I will be providing instructions on how to do this at a later date. 
-    * Install your FF binaries into a locale 
+    * To build your own, see [Building ffmpeg with libndi_newtek support](build_ffmpeg_with_libdni_newtek.md)
 * avahi
     * NDI is dependent on zeroconf support. This can be provided with avahi
 * You may need to disable reverse packet filtering on you network interfaces. 
@@ -21,11 +20,11 @@
     * return a list of all the built in encoder presets as defined in settings/encoderPresets.json
 
 ## Notes
-This was developed against Ubuntu 16.04 and has not been tested on any other OS. I don't 
+This was developed against Ubuntu 19.10. YMMV on other OSes. 
 
 ## Getting Started
 
 To create a profile, copy the profile.example.json file to a new file, and change the settings as approriate for your stream.  
 
 ## Running as a service
-Instructions on how to do this will be provided soon.
+I've had good experience with running this w/ systemd. 
