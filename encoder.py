@@ -20,7 +20,7 @@ def ffmpeg_encode(framerate=30, resolution="1280x720", intVideoBitrate=3, audioB
     else:
         videoBitrate = str(intVideoBitrate) + "M"
         videoBuffer = str(intVideoBitrate*2) + "M"
-        ffmpeg_encode_args = ['ffmpeg', '-f', 'libndi_newtek', '-i', 
+        ffmpeg_encode_args = ['./ffmpeg', '-f', 'libndi_newtek', '-i', 
         ndiSource, '-r', str(framerate), '-g', str(framerate*2), '-keyint_min', str(framerate), 
         '-s', resolution, '-pix_fmt', 'yuv420p', '-c:v', 'libx264', 
         '-ac', '2', '-ar', '44100', '-c:a', 'aac', '-b:a', audioBitrate,
