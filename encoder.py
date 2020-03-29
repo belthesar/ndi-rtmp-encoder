@@ -9,7 +9,7 @@ def ffmpeg_check_sources(dummyArg=None):
     try:
         subprocess.check_call(['./ffmpeg', '-f', 'libndi_newtek', '-find_sources', '1', '-i', 'dummy'])
     except subprocess.CalledProcessError:
-        print("No NDI sources were found. Please ensure that at least one NDI source is available on your network, and that you have a running zeroconf daemon on your system.")
+        pass
     except OSError:
         print("ERROR: ffmpeg not found. Please make sure sure ffmpeg is in the local directory and try again.")
 
