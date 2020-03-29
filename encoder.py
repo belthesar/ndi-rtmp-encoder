@@ -6,7 +6,12 @@ import os
 import codecs
 
 def ffmpeg_check_sources(dummyArg=None):
-    subprocess.check_call(['ffmpeg', '-f', 'libndi_newtek', '-find_sources', '1', '-i', 'dummy'])
+    try:
+        subprocess.check_call(['./ffmpeg', '-f', 'libndi_newtek', '-find_sources', '1', '-i', 'dummy'])
+    except subprocess.CalledProcessError:
+        print("No NDI sources were found. Please ensure that at least one NDI source is available on your network, and that you have a running zeroconf daemon on your system.")
+    except OSError:
+        print("ERROR: ffmpeg not found. Please make sure sure ffmpeg is in the local directory and try again.")
 
 def ffmpeg_encode(framerate=30, resolution="1280x720", intVideoBitrate=3, audioBitrate="128k", x264Preset = "veryfast", ndiSource=None, rtmpStream=None):
     if not ndiSource or not rtmpStream:
