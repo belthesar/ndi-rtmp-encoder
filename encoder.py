@@ -13,7 +13,7 @@ def ffmpeg_check_sources(dummyArg=None):
     except OSError:
         print("ERROR: ffmpeg not found. Please make sure sure ffmpeg is in the local directory and try again.")
 
-def ffmpeg_encode(framerate=30, resolution="1280x720", intVideoBitrate=3, audioBitrate="128k", x264Preset = "veryfast", ndiSource=None, rtmpStream=None):
+def ffmpeg_encode(framerate=30, resolution="1280x720", intVideoBitrate=3, audioBitrate="128k", x264Preset = "veryfast", ndiSource=None, rtmpStream=None, threadCount=0):
     if not ndiSource or not rtmpStream:
         print("NDI Source or RTMP URI not specified. Exiting.")
         sys.exit(1)
@@ -22,10 +22,11 @@ def ffmpeg_encode(framerate=30, resolution="1280x720", intVideoBitrate=3, audioB
         videoBuffer = str(intVideoBitrate*2) + "M"
         ffmpeg_encode_args = ['./ffmpeg', '-f', 'libndi_newtek', '-i', 
         ndiSource, '-r', str(framerate), '-g', str(framerate*2), '-keyint_min', str(framerate), 
-        '-s', resolution, '-pix_fmt', 'yuv420p', '-c:v', 'libx264', 
+        '-crf', '23', '-s', resolution, '-pix_fmt', 'yuv420p', '-c:v', 'libx264', 
         '-ac', '2', '-ar', '44100', '-c:a', 'aac', '-b:a', audioBitrate,
         '-b:v', videoBitrate, '-minrate', videoBitrate, '-maxrate', videoBitrate, '-bufsize', videoBuffer,
-        '-x264-params', 'nal-hrd=cbr', '-preset', x264Preset, '-f', 'flv', '-threads', '0', rtmpStream]
+        '-x264-params', 'nal-hrd=cbr', '-preset', x264Preset, '-tune', 'film', '-f', 'flv', '-threads', threadCount,
+        '-strict', 'normal', rtmpStream]
         subprocess.call(ffmpeg_encode_args)
 
 def broadcast(encoderProfileFile):
@@ -46,7 +47,8 @@ def broadcast(encoderProfileFile):
             audioBitrate=encoderPreset['audioBitrate'], 
             x264Preset=encoderPreset['x264Preset'], 
             ndiSource=encoderProfile['ndiSourceName'], 
-            rtmpStream=encoderProfile['rtmpStream']
+            rtmpStream=encoderProfile['rtmpStream'],
+            threadCount=encoderProfile['cpuCoreLimit']
             )
 
 def show_presets(dummyArg=None):

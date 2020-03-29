@@ -1,5 +1,6 @@
 {
-    "ndiSourceName": "",
-    "encoderPreset": "",
-    "rtmpStream": ""
+    "ndiSourceName": "", // This is the name of the NDI source you wish to capture. You can see the names of sources with the "show_ndi_sources" command
+    "encoderPreset": "", // The preset you wish to use. See encoderPresets.json
+    "rtmpStream": "", // This is your RTMP stream path, with your stream key. 
+    "cpuCoreLimit": "0" // This is the number of cores you want to use to encode. 0 == all cores. 
 }
