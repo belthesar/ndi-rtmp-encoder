@@ -26,7 +26,7 @@ def ffmpeg_encode(framerate=30, resolution="1280x720", intVideoBitrate=3, audioB
         '-ac', '2', '-ar', '44100', '-c:a', 'aac', '-b:a', audioBitrate,
         '-b:v', videoBitrate, '-minrate', videoBitrate, '-maxrate', videoBitrate, '-bufsize', videoBuffer,
         '-x264-params', 'nal-hrd=cbr', '-preset', x264Preset, '-f', 'flv', '-threads', threadCount,
-        rtmpStream]
+        '-strict', 'normal', rtmpStream]
         subprocess.call(ffmpeg_encode_args)
 
 def broadcast(encoderProfileFile):
