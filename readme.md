@@ -3,7 +3,7 @@
 ## Pre-requisites
 * Python 
 * ffmpeg compiled with NDI support
-    * To build your own, see [Building ffmpeg with libndi_newtek support](build_ffmpeg_with_libdni_newtek.md)
+    * To build your own, see [Building ffmpeg with libndi_newtek support](build_ffmpeg_with_libndi_newtek.md)
 * avahi
     * NDI is dependent on zeroconf support. This can be provided with avahi
 * You may need to disable reverse packet filtering on you network interfaces. 
