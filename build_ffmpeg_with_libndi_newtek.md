@@ -1,7 +1,7 @@
 # Building ffmpeg with libndi_newtek
 
 ## IMPORTANT NOTE
-libndi_newtek support was removed from ffmpeg due to a GPL Violation. As a result, the latest version that support libndi_newtek is ffmpeg 4.1.5. 
+libndi_newtek support was removed from ffmpeg due to a GPL Violation. As a result, the latest version that supports libndi_newtek is ffmpeg 4.1.5. 
 If you are looking to take advantage of the latest features of ffmpeg, such as new hardware encoder offloading support, you will not receive
 support from the ffmpeg team. 
 
